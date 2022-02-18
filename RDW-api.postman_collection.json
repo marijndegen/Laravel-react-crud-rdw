@@ -48,7 +48,32 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n        \"brand\": \"Hyundai\",\n        \"model\": \"Getz\",\n        \"body_type\": \"SPORT-UTILITY VEHICLE (SUV)\",\n        \"plate_number\": \"8T-91-MT\",\n        \"ascription_date\": \"2008-10-17 04:51:29\",\n        \"fuel\": \"LPG\",\n        \"number_of_cylinders\": 6\n    }"
+					"raw": "{\n        \"brand\": \"Hyundai\",\n        \"model\": \"Getz\",\n        \"body_type\": \"SPORT-UTILITY VEHICLE (SUV)\",\n        \"plate_number\": \"8T-11-MT\",\n        \"ascription_date\": \"2008-10-17 04:51:29\",\n        \"fuel\": \"LPG\",\n        \"number_of_cylinders\": 6\n    }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update car",
+			"request": {
+				"url": "http://localhost:8000/api/v1/cars/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"brand\": \"ItalCar\",\n        \"model\": \"Attiva\",\n        \"body_type\": \"COUPE\",\n        \"plate_number\": \"XH-3#-SJ\",\n        \"ascription_date\": \"2021-08-04 20:15:33\",\n        \"fuel\": \"HYDROGEN\",\n        \"number_of_cylinders\": 10\n    }"
 				},
 				"description": ""
 			},
