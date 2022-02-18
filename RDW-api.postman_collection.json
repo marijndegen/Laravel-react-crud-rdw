@@ -1,0 +1,69 @@
+{
+	"variables": [],
+	"info": {
+		"name": "RDW-api",
+		"_postman_id": "a03346d6-0108-e378-0698-7555887d2e89",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all cars",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/v1/cars",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "delete car",
+			"request": {
+				"url": "http://localhost:8000/api/v1/cars/66",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New car",
+			"request": {
+				"url": "http://localhost:8000/api/v1/cars",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"brand\": \"Hyundai\",\n        \"model\": \"Getz\",\n        \"body_type\": \"SPORT-UTILITY VEHICLE (SUV)\",\n        \"plate_number\": \"8T-91-MT\",\n        \"ascription_date\": \"2008-10-17 04:51:29\",\n        \"fuel\": \"LPG\",\n        \"number_of_cylinders\": 6\n    }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get a single car",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/v1/cars/85",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
