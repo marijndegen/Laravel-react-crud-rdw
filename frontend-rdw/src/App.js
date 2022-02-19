@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
+import EditCar from "./Pages/EditCar";
+import ListCars from "./Pages/ListCars";
+import NewCar from "./Pages/NewCar";
+import ViewCar from "./Pages/ViewCar";
+
+class App extends Component {
+  render = () => {
+    return (
+      <Router>
+        <nav>
+          <Link to="/"> EditCar </Link>
+          <Link to="/list"> ListCars </Link>
+          <Link to="/new"> NewCar </Link>
+          <Link to="/view"> ViewCar </Link>
+        </nav>
+        <Routes>
+          <Route path="/" element={<EditCar />} />
+          <Route path="/list" element={<ListCars />} />
+          <Route path="/new" element={<NewCar />} />
+          <Route path="/view" element={<ViewCar />} />
+          <Route path="*" element={<h1>Not  found</h1>} />
+        </Routes>
+      </Router>
+
+    );
+  }
 }
 
 export default App;
