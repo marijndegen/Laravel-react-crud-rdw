@@ -48,7 +48,10 @@ const NewEditCar = () => {
             return;
         }
         setError([]);
-        setCar(emptyCar);
+
+        if (!carId)
+            setCar(emptyCar);
+
         alert("Car succesfully saved!");
     };
 
@@ -58,7 +61,7 @@ const NewEditCar = () => {
     }
 
     const editCarButton = () => {
-        editCar(car)
+        editCar(carId, car)
             .then(carResponse);
     }
 
@@ -102,7 +105,7 @@ const NewEditCar = () => {
                     <button
                         className="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                         type="button"
-                        onClick={newCarButton}
+                        onClick={carId ? editCarButton : newCarButton}
                     >
                         {carId ? "Edit car" : "Create new car"}
                     </button>

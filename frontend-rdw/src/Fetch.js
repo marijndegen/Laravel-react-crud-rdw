@@ -9,7 +9,7 @@ const getCar = async (carId) => {
 }
 
 const newCar = async (car) => {
-    return await fetch('http://localhost:8000/api/v1/cars', {
+    return await fetch('http://127.0.0.1:8000/api/v1/cars', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -20,8 +20,16 @@ const newCar = async (car) => {
         .catch(err => alert(err));
 }
 
-const editCar = async (car) => {
-    return {};
+const editCar = async (carId, car) => {
+    return await fetch(`http://127.0.0.1:8000/api/v1/cars/${carId}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(car)
+    }).then(response => response.json())
+        .catch(err => alert(err));
 }
 
 export { listCars, getCar, newCar, editCar };
