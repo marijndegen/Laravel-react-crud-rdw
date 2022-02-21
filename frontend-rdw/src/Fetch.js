@@ -8,4 +8,20 @@ const getCar = async (carId) => {
         .then(response => response.json());
 }
 
-export { listCars, getCar };
+const newCar = async (car) => {
+    return await fetch('http://localhost:8000/api/v1/cars', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(car)
+    }).then(response => response.json())
+        .catch(err => alert(err));
+}
+
+const editCar = async (car) => {
+    return {};
+}
+
+export { listCars, getCar, newCar, editCar };
