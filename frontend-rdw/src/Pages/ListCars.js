@@ -1,19 +1,25 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
+
+import { listCars } from '../Fetch';
 
 import CardComponent from '../Components/CardComponent';
 
-class ListCars extends Component {
-    render = () => {
-        return (
-            <div class="w-4/6 z-50 relative mx-auto mt-36">
-                <div class="bg-white w-full rounded-xl shadow-xl overflow-hidden p-1">
-                    <CardComponent />
-                    <CardComponent />
-                    <CardComponent />
-                </div>
+const ListCars = () => {
+    const [cars, setCars] = useState(() => [])
+
+    useEffect(() => {
+        console.log(cars);
+        listCars()
+            .then((cars) => setCars(cars));
+    }, []);
+
+    return (
+        <div className="w-4/6 z-50 relative mx-auto mt-5">
+            <div className="bg-white w-full rounded-xl shadow-xl overflow-hidden p-1">
+                {cars.map(car => <CardComponent key={"ListCars" + car.id} {...car} />)}
             </div>
-        );
-    }
+        </div>
+    );
 }
 
 export default ListCars;
