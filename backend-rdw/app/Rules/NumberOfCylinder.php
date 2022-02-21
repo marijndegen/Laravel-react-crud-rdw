@@ -48,6 +48,6 @@ class NumberOfCylinder implements Rule
      */
     public function message()
     {
-        return 'The validation error message.';
+        return 'Number of cylinders should be a number if a fossil fuel is selected.';
     }
 }
