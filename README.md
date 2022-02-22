@@ -37,9 +37,9 @@ A laravel react application for managing cars
 9. php artisan serve
 
 *Frontend*
-10. cd ../frontend-rdw
-11. npm i
-12. npm start
+1. cd ../frontend-rdw
+2. npm i
+3. npm start
 
 #### Files with minor changes or boilerplate code
 *Backend*
