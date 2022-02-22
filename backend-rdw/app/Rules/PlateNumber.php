@@ -49,6 +49,6 @@ class PlateNumber implements Rule
      */
     public function message()
     {
-        return 'The validation error message.';
+        return 'The plate number is incorrect (Use: xx-xx-xx).';
     }
 }
