@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import NavBar from "./Components/NavBar";
 
-import EditCar from "./Pages/NewEditCar";
 import ListCars from "./Pages/ListCars";
-import NewCar from "./Pages/NewCar";
 import ViewCar from "./Pages/ViewCar";
 import NewEditCar from "./Pages/NewEditCar";
 
@@ -16,17 +14,7 @@ class App extends Component {
       <Router>
         <NavBar />
         <Routes>
-          <Route path="/" element={
-            <>
-              <h1>Select an action</h1>
-              <Link to="/new" className="flex">
-                new
-              </Link>
-              <Link to="/edit/20" className="flex">
-                edit
-              </Link>
-            </>
-          } />
+          <Route path="/" element={<h1>Click "list cars" or "new car" in the top right menu</h1>} />
           <Route path="/edit/:carId" element={<NewEditCar />} />
           <Route path="/list" element={<ListCars />} />
           <Route path="/new" element={<NewEditCar />} />
@@ -34,7 +22,6 @@ class App extends Component {
           <Route path="*" element={<h1>Not  found</h1>} />
         </Routes>
       </Router >
-
     );
   }
 }

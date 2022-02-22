@@ -32,4 +32,14 @@ const editCar = async (carId, car) => {
         .catch(err => alert(err));
 }
 
-export { listCars, getCar, newCar, editCar };
+const deleteCar = async (carId) => {
+    return await fetch(`http://127.0.0.1:8000/api/v1/cars/${carId}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    }).then(response => response.json());
+}
+
+export { listCars, getCar, newCar, editCar, deleteCar };

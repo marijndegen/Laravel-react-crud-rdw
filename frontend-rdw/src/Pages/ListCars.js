@@ -8,7 +8,6 @@ const ListCars = () => {
     const [cars, setCars] = useState(() => [])
 
     useEffect(() => {
-        console.log(cars);
         listCars()
             .then((cars) => setCars(cars));
     }, []);
